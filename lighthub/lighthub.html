@@ -13,7 +13,9 @@
                 outputs:1,
     icon: "lh.png",
     paletteLabel: "lighthub controller",
-    label: "lh",
+    label: function() {
+            return this.name||"lighthub";
+          },
     labelStyle: function() {
       return this.name?"node_label_italic":"";
     },
@@ -40,6 +42,40 @@
         });
 </script>
 
+<script type="text/x-red" data-template-name="lazyhome">
+
+    <div class="form-row" id="lazyhome-name">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+
+    <div class="form-row" id="lazyhome-mac">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="MAC">
+    </div>
+
+    <div class="form-row" id="lazyhome-broadcast">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Broadcast topic">
+    </div>
+
+    <div class="form-row" id="lazyhome-status">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Status topic">
+    </div>
+
+
+    <div class="form-row" style="margin-bottom: 0px;">
+      <label for="node-input-info">Description</label>
+      <a href="https://guides.github.com/features/mastering-markdown/" target="_blank" style="font-size: 0.8em; float: right;">markdown</a>
+      <input type="hidden" id="node-input-info" autofocus="autofocus">
+    </div>
+
+    <div class="form-row node-text-editor-row">
+        <div style="height: 250px; min-height:150px;" class="node-text-editor" id="node-description-editor"></div>
+    </div>
+
+</script>
 <script type="text/x-red" data-help-name="lighthub">
 <div style="font-size: 75%;text-align: right;font-style: italic;margin-bottom: -8px;">
 <a href="https://github.com/anklimov/node-red-contrib-lighthub" target="_blank">ActionFlows Docs</a></div>
