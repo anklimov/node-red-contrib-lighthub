@@ -19,6 +19,7 @@
         "nodes": {
             "lighthub": "lighthub/lighthub.js"
         }
+  },
   "author": "Andrey N Klimov",
   "license": "Apache-2.0",
   "bugs": {
