@@ -24,14 +24,8 @@ module.exports = function(RED) {
 
 
 
-  RED.nodes.registerType("lighthub", lighthub){
-    settings: {
-        config: {
-            value: "red",
-            exportable: true
-        }
-    }
-};
+  RED.nodes.registerType("lighthub", lighthub);
+
 
   RED.events.on("nodes-started", runtimeMap);
 }

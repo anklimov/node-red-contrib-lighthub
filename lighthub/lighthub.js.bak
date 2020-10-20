@@ -614,3 +614,14 @@ module.exports = function(RED) {
 
   RED.events.on("nodes-started", runtimeMap);
 }
+
+====
+
+{
+  settings: {
+      config: {
+          value: "red",
+          exportable: true
+      }
+  }
+};
