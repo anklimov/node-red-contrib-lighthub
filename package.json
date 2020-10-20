@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-lighthub",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node to manage and control Lazyhome smarthome controller",
   "main": "index.js",
   "scripts": {
