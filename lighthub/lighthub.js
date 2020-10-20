@@ -6,11 +6,13 @@ module.exports = function(RED) {
     // Create our node and event handler
     RED.nodes.createNode(this, config);
 
-    node.on('input', function(msg, send, done)) {
+    node.on('input', function(msg, send, done) {
     msg.payload = msg.payload.toLowerCase();
     node.send(msg);
     done();
+
 });
+
 }
 
 
@@ -27,5 +29,5 @@ module.exports = function(RED) {
   RED.nodes.registerType("lighthub", lighthub);
 
 
-  RED.events.on("nodes-started", runtimeMap);
+  RED.events.on("flows:started", onStart);
 }
