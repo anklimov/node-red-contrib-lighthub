@@ -12,7 +12,7 @@
                 inputs:1,
                 outputs:1,
     icon: "lh.png",
-    paletteLabel: "lighthub controller",
+    paletteLabel: "LightHub",
     label: function() {
             return this.name||"lighthub";
           },
@@ -74,9 +74,50 @@
     <div class="form-row node-text-editor-row">
         <div style="height: 250px; min-height:150px;" class="node-text-editor" id="node-description-editor"></div>
     </div>
-
 </script>
-<script type="text/x-red" data-help-name="lighthub">
-<div style="font-size: 75%;text-align: right;font-style: italic;margin-bottom: -8px;">
-<a href="https://github.com/anklimov/node-red-contrib-lighthub" target="_blank">ActionFlows Docs</a></div>
+
+<script type="text/html" data-help-name="lighthub">
+<p>Connects to a MQTT broker and publishes messages.</p>
+
+<h3>Inputs</h3>
+    <dl class="message-properties">
+        <dt>payload
+            <span class="property-type">string | buffer</span>
+        </dt>
+        <dd> the payload of the message to publish. </dd>
+        <dt class="optional">topic <span class="property-type">string</span></dt>
+        <dd> the MQTT topic to publish to.</dd>
+    </dl>
+
+ <h3>Outputs</h3>
+     <ol class="node-ports">
+         <li>Standard output
+             <dl class="message-properties">
+                 <dt>payload <span class="property-type">string</span></dt>
+                 <dd>the standard output of the command.</dd>
+             </dl>
+         </li>
+         <li>Standard error
+             <dl class="message-properties">
+                 <dt>payload <span class="property-type">string</span></dt>
+                 <dd>the standard error of the command.</dd>
+             </dl>
+         </li>
+     </ol>
+
+<h3>Details</h3>
+    <p><code>msg.payload</code> is used as the payload of the published message.
+    If it contains an Object it will be converted to a JSON string before being sent.
+    If it contains a binary Buffer the message will be published as-is.</p>
+    <p>The topic used can be configured in the node or, if left blank, can be set
+    by <code>msg.topic</code>.</p>
+    <p>Likewise the QoS and retain values can be configured in the node or, if left
+    blank, set by <code>msg.qos</code> and <code>msg.retain</code> respectively.</p>
+
+<h3>References</h3>
+    <ul>
+        <li><a href="https://github.com/anklimov/node-red-contrib-lighthub" target="_blank">LightHub Docs</a></li>
+        <li><a>Twitter API docs</a> - full description of <code>msg.tweet</code> property</li>
+        <li><a>GitHub</a> - the nodes github repository</li>
+    </ul>
 </script>
